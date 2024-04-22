@@ -19,8 +19,13 @@ void game_loop(window_t *mon_game, parallax_t *parallax)
             if (event.type == sfEvtClosed)
                 sfRenderWindow_close(mon_game->window);
         }
+        mon_game->time = sfClock_getElapsedTime(mon_game->clock);
+        mon_game->seconds = mon_game->time.microseconds / 1000000.0;
+        if (mon_game->seconds > 0.005) {
+            move_parallax(parallax);
+            sfClock_restart(mon_game->clock);
+        }
         draw_parallax(mon_game->window, parallax);
-        move_parallax(parallax);
         sfRenderWindow_display(mon_game->window);
         sfRenderWindow_clear(mon_game->window, sfBlack);
     }

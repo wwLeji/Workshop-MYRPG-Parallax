@@ -16,6 +16,9 @@
 
 typedef struct window_s {
     sfRenderWindow *window;
+    sfClock *clock;
+    sfTime time;
+    float seconds;
 } window_t;
 
 typedef struct parallax_s {

@@ -12,14 +12,12 @@
 
 void create_parallax_textures(parallax_t *parallax)
 {
-    // Création des textures
+    // Création de toutes les textures
 }
 
 void create_parallax(parallax_t *parallax, int i)
 {
-    sfVector2f pos = {0, 0};
-    sfVector2f scale = {6, 6};
-    // Création du sprite i 
+    // Création de sprite i
 }
 
 void init_parallax(parallax_t *parallax)
@@ -30,18 +28,17 @@ void init_parallax(parallax_t *parallax)
     sfSprite_setTexture(parallax->background_sprite, parallax->background_texture, sfTrue);
     sfSprite_setPosition(parallax->background_sprite, (sfVector2f){0, 0});
     sfSprite_setScale(parallax->background_sprite, (sfVector2f){6, 6});
-
-    // appel pour Création des textures
-    // appel pour Création des sprites
+    // appel de la fonction create_parallax_textures
+    // appel de la fonction create_parallax (boucle)
 }
 
 void draw_parallax(sfRenderWindow *window, parallax_t *parallax)
 {
     sfRenderWindow_drawSprite(window, parallax->background_sprite, NULL);
-    // Affichage des parallax
+    // draw les sprites de parallax (boucle)
 }
 
 void move_parallax(parallax_t *parallax)
 {
-    // Déplacement des parallax
+    // Déplacement des sprites du parallax (boucle)
 }
